@@ -36,11 +36,11 @@ token_words <- c('rt', 'q', 'v', 'mg', 'fav')
 
 ui <- fluidPage(theme = shinytheme('superhero'),
 
-    # Application title
+    
     titlePanel("#EleccionesArgentina - ¿Qué se dijo en Twitter?"),
     hr(),
 
-    # Sidebar with a slider input for number of bins 
+    
     sidebarLayout(
         sidebarPanel(
             h3('Parámetros'),
@@ -53,7 +53,6 @@ ui <- fluidPage(theme = shinytheme('superhero'),
                                   as.POSIXct("2019-10-27 21:00:00")),
                         ticks = FALSE,
                         timeFormat = '%T'),
-            #actionButton("update", "Update range"),
             hr(),
             h4('Filtro de retweets'),
             switchInput(label = '¿Dejar retweets?', inputId = 'retweet', value = TRUE,
@@ -97,7 +96,6 @@ ui <- fluidPage(theme = shinytheme('superhero'),
     )
 )
 
-# Define server logic required to draw a histogram
 server <- function(input, output) {
     #inicio server
     
@@ -282,5 +280,5 @@ server <- function(input, output) {
     #fin server
 }
 
-# Run the application 
+# Run  
 shinyApp(ui = ui, server = server)
